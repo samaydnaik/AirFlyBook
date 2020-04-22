@@ -1,0 +1,30 @@
+<%- include('partials/header.ejs') %>
+<div class="container">
+    <form name="CndForm" action="/" method="POST" class="was-validated"
+        style="margin-left: 20%;margin-top: 10%;border: 2px solid black;padding: 10px 10px 10px 10px;width: 50%;">
+        <div class="form-group">
+            <label for="uname">UserName</label>
+            <input type="text" class="form-control" id="uname" placeholder="Enter name" name="uname" required>
+        </div>
+        <div class="form-group">
+            <label for="pass">Password</label>
+            <input type="password" class="form-control" id="pass" placeholder="Enter Password" name="passwrd" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" placeholder="Enter Age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="text" class="form-control" id="gender" placeholder="Enter Gender" name="gender" required>
+        </div>
+        <div class="form-group">
+            <label for="phno">MobileNumber</label>
+            <input type="number" class="form-control" id="phno" placeholder="Enter Mobile Number" name="phnumber" required>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs') %>

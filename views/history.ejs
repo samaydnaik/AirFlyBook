@@ -1,0 +1,59 @@
+<%- include('partials/header.ejs') %>
+<%if (Array.isArray(result) && result.length){%>
+<div class="container">
+    <h1 style="text-align: center;">Booking History</h1>
+    <h3 style="text-align: center;">Booking Details</h3>
+    <table class="table">
+        <thead>
+            <tr class="table-secondary">
+                <th>Flight_id</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Seats</th>
+                <th>Total_Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%result.forEach(function(airline){%>
+            <tr class="table-primary">
+                <td><%=airline.Flight_id%></td>
+                <td><%=airline.Source%></td>
+                <td><%=airline.Destination%></td>
+                <td><%=airline.Date%></td>
+                <td><%=airline.Time%></td>
+                <td><%=airline.SeatsNo%></td>
+                <td><%=airline.TotalCost%></td>
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+    <h3 style="text-align: center;">User Details</h3>
+    <table class="table">
+        <thead>
+            <tr class="table-secondary">
+                <th>User_id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>MobileNumber</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-primary">
+                <td><%=result[0].User_Id%></td>
+                <td><%=currentUser%></td>
+                <td><%=age%></td>
+                <td><%=gender%></td>
+                <td><%=mobnum%></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="/" class="btn btn-info" role="button">Home</a>
+</div>
+<%}else{%>
+<h1 style="text-align: center;">No Bookings Done Yet!!!</h1>
+<%}%>    
+<%- include('partials/footer.ejs') %>

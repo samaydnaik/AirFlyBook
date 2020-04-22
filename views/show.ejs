@@ -1,0 +1,56 @@
+
+
+
+<%- include('partials/header.ejs') %>
+<div class="container">
+    <h3 style="text-align: center;">Flights Available</h3>
+    <table class="table">
+        <thead>
+            <tr class="table-secondary">
+                <th>Flight_id</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Fare</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <%result.forEach(function(airline){%>
+            <tr class="table-primary">
+                <td><%=airline.Flight_id%></td>
+                <td><%=airline.Source%></td>
+                <td><%=airline.Destination%></td>
+                <td><%=airline.Date%></td>
+                <td><%=airline.Time%></td>
+                <td><%=airline.Fare%></td>
+                <form action="/#" method="POST">
+                    <td><button type="button" class="btn btn-danger"
+                            onclick="document.getElementById('seatid').style.display='block'">Seats</button></td>
+                </form>
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+    <form action="/book" method="Post">
+        <div class="form-group" id="seatid"
+            style="height: 34%;width: 16%;margin-left: 74%;border: 2px solid black;display: none; padding:2px 2px 2px 3px;">
+            <label>Number of Seats</label>
+            <input style="margin-top: 6px;width: 41px;" type="number" placeholder="Enter" name="seats">
+            <button type="submit" class="btn btn-danger">Book</button>
+        </div>
+    </form>
+    <br>
+    <a href="/" class="btn btn-info" role="button">Home</a>
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+
+
+
+
+
+
+

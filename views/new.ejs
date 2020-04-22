@@ -1,0 +1,33 @@
+<%- include('partials/header.ejs') %>
+<div class="container">
+    <form name="CndForm" action="/list" method="POST"
+        style="margin-left: 20%;margin-top: 10%;border: 2px solid black;padding: 10px 10px 10px 10px;width: 50%;">
+        <div class="form-group">
+            <label for="uname">From</label>
+            <input type="text" class="form-control" id="uname" placeholder="Enter starting point" name="source" required>
+        </div>
+        <div class="form-group">
+            <label for="age">To</label>
+            <input type="text" class="form-control" id="age" placeholder="Enter destination" name="dest" required>
+        </div>
+        <div class="form-row">
+            <label>Date:</label>
+            <div class="col">
+                <label for="hght">Day</label>
+            <input type="number" class="form-control" style="width:73%"  id="hght" placeholder="Enter Day" name="day" required>
+            </div>
+            <div class="col">
+            <label for="wght">Month</label>
+            <input type="number" class="form-control" style="width:73%" id="wght" placeholder="Enter Month" name="month" required>
+            </div>
+            <div class="col">
+                <label for="wgh1t">Year</label>
+            <input type="number" class="form-control" style="width:73%" id="wgh1t" placeholder="Enter Year" name="year" required>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs') %>
